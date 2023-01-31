@@ -1,6 +1,6 @@
 package com.spartaglobal;
 
-public class Hunter extends BaseClass implements IShootable  {
+public class Hunter extends Person implements IShootable  {
     private IShootable shootable;
 
     public Hunter(String firstName, String lastName, int age, IShootable shootable) {
