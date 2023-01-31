@@ -2,13 +2,18 @@ package com.spartaglobal.weapons;
 
 public class LaserGun extends Weapon {
     public LaserGun(String brand) {
-        super(WeaponType.LaserGun, brand);
+        super(brand);
     }
 
     @Override
     public String toString()
     {
-        return "Splash!! " + super.toString();
+        return "Zing!! " + super.toString();
+    }
+
+    @Override
+    public String shoot() {
+        return "Shooting a LaserGun";
     }
 
 }

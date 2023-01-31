@@ -2,10 +2,8 @@ package com.spartaglobal.weapons;
 
 public class BubbleBlaster extends Weapon {
 
-
     public BubbleBlaster(String brand) {
-        super(WeaponType.BubbleBlaster, brand);
-
+        super(brand);
     }
 
     @Override
@@ -14,4 +12,8 @@ public class BubbleBlaster extends Weapon {
         return "Bubbles... " + super.toString();
     }
 
+    @Override
+    public String shoot() {
+        return "Shooting a BubbleBlaster";
+    }
 }
