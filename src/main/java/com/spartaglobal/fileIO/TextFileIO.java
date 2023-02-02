@@ -1,24 +1,19 @@
 package com.spartaglobal.fileIO;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
-public class TextFileIO { // It is a library of static methods
+public class TextFileIO { // a library of static methods.s
 
 
-    /* HOMEWORK: Reads a file and returns an array of Strings, one for
+    /* ---------------  HOMEWORK ---------------------------
      */
     public static String[] readFile(String fileName) {
-        List<String> result = new ArrayList<String>();
-        // AutoCloseable
-        try (FileReader fr = new FileReader(fileName)){
+        List<String> result = new ArrayList<>();
 
-            BufferedReader br = new BufferedReader(new FileReader(fileName));
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = br.readLine()) != null) {
                 result.add(line);
@@ -27,14 +22,15 @@ public class TextFileIO { // It is a library of static methods
             e.printStackTrace();
             return null;
         }
-        // Convert the List<String> to String[]
+
+        // Convert List<String> to String[]
         // See https://stackoverflow.com/questions/9929321/converting-arraylist-to-array-in-java#9929344
         String[] arrayResult = new String[result.size()];
         result.toArray(arrayResult);
         return arrayResult;
     }
 
-    // Writes an array of Strings to file, one line for each member of the array:
+
     public static void writeFile(String fileName, String[] lines) {
         try (FileWriter fw = new FileWriter(fileName)) {
             for (String line : lines) {
@@ -46,9 +42,24 @@ public class TextFileIO { // It is a library of static methods
         }
     }
 
+    public static void readwriteFile(String inFileName, String outFileName) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(inFileName));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(outFileName));
+
+            String line;
+            while((line = br.readLine()) != null) {
+                System.out.println(line);
+                bw.write(line+ "\n");
+            }
+            bw.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /*
-      readFile from today's lesson!
+  ----------    readFile from Today's lesson! ----------------
     */
     public static void readFile_lesson(String fileName) {
 
