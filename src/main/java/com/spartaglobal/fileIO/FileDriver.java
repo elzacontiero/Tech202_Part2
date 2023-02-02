@@ -12,6 +12,8 @@ public class FileDriver {
                 "This is a second line"
         };
         TextFileIO.writeFile("test.txt", lines);
+        TextFileIO.readwriteFile("test.txt", "output_test.txt");
+
 
         // From lesson:
 //        TextFileIO.readFile_lesson("src/main/resources/employees_short.csv");
