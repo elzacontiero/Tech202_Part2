@@ -2,36 +2,38 @@
 
 This project contains sample code from lessons while taking the Sparta Global course, organised . The following courses are currently available:
 
-# FileIO
+## FileIO
 
-[`com.spartaglobal.fileIO`](tree/main/src/main/java/com/spartaglobal/fileIO)
+Package `com.spartaglobal.fileIO`
 
 Package with instructions on how to implement input and ouptut from files. 
 
 
-# Kata StringCalculator
+## Kata StringCalculator
 
-[`com.spartaglobal.kata`](tree/main/src/main/java/com/spartaglobal/kata)
+Package `com.spartaglobal.kata`
 
 Class `StringCalculatorKata` method `add` to read string with a separator specification and return the result of the addition of numbers. 
 
 Tests available in `CalculatorKataTest`.
 
-# Logging
+## Logging
 
-[`com.spartaglobal.logging`](tree/main/src/main/java/com/spartaglobal/logging)
+Package `com.spartaglobal.logging`
 
 Lesson and exercises about logging with Log4j. 
 
 
-# Regexr
+## Regexr
 
-[`com.spartaglobal.regexr`](tree/main/src/main/java/com/spartaglobal/regexr)
+Package `com.spartaglobal.regexr`
 
 Lesson about Regular Expressions. 
 
 
-# Weapons
+## Weapons
+
+Package `com.spartaglobal.weapons`
 
 Exercise on Object Orienting Programming. Contains the classes:
 
@@ -46,7 +48,7 @@ Exercise on Object Orienting Programming. Contains the classes:
 
 ## Employee
 
-[`com.spartaglobal.homework_employee`](tree/main/src/main/java/com/spartaglobal/homework_employee)
+com.spartaglobal.homework_employee
 
 Tests in `TestEmployeeUtilities`
 
