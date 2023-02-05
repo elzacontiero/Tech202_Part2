@@ -1,0 +1,30 @@
+<document>
+    <name>Elza Contiero</name>
+    <dob>01/01/1980</dob>
+    <mobile>078964545513</mobile>
+    <address>
+        <firstline>10 Downing Street</firstline>
+        <city>London</city>
+        <postcode>SW1A 2AA</postcode>
+    </address>
+    <hobbies>
+        <hobby>Violin</hobby>
+        <hobby>Trekking</hobby>
+    </hobbies>
+    <profession>Software Engineer</profession>
+    <education>
+        <course>
+            <name>QA Bootcamp</name>
+            <provider>QA Academy</provider>
+        </course>
+        <course>
+            <name>Cooking 101</name>
+            <provider>The Smart Kitchen Academy</provider>
+        </course>
+        <course>
+            <name>How to dismantle an atomic bomb</name>
+            <provider>U2</provider>
+        </course>
+    </education>
+
+</document>

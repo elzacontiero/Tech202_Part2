@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
-public class TextFileIO { // a library of static methods.s
+public class TextFileIO { // a library of static methods.
 
 
     /* ---------------  HOMEWORK ---------------------------
@@ -57,6 +57,8 @@ public class TextFileIO { // a library of static methods.s
             e.printStackTrace();
         }
     }
+
+
 
     /*
   ----------    readFile from Today's lesson! ----------------

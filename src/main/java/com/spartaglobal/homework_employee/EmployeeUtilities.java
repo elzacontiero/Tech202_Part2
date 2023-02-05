@@ -17,6 +17,44 @@ public class EmployeeUtilities {
     // dateFormat created once and used as many times needed.
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
+
+    public static Employee createEmployee(String line) {
+
+        String[] fields = line.split(",");
+        Employee emp = null;
+        try {
+            int empNo = Integer.parseInt(fields[0]);
+            Date birthDate = dateFormat.parse(fields[1]);
+            String firstName = fields[2];
+            String lastName = fields[3];
+            char gender = fields[4].charAt(0);
+            Date hireDate = dateFormat.parse(fields[5]);
+
+            emp = new Employee(empNo, birthDate, firstName, lastName, gender, hireDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return emp;
+    }
+
+    public static ArrayList<Employee> readEmployees(String fileName) {
+        ArrayList<String> faultyLines = new ArrayList<>();
+        String[] lines = TextFileIO.readFile(fileName);
+        ArrayList<Employee> result = new ArrayList<>();
+        for (String line : lines) {
+            if (validateEmployeeLine(line)) {
+                // Make use of method createEmployee above and saves to emp.
+                Employee emp = createEmployee(line);
+                result.add(emp);
+            }
+            else {
+                logger.warn("Invalid input line: " + line);
+                faultyLines.add(line);
+            }
+        }
+        return result;
+    }
+
     /**
      * The input is a String line, because we can't receive an Employee
      * object as it would have been already parsed just fine.
@@ -59,44 +97,6 @@ public class EmployeeUtilities {
         return true;
     }
 
-
-
-    public static Employee createEmployee(String line) {
-
-        String[] fields = line.split(",");
-        Employee emp = null;
-        try {
-            int empNo = Integer.parseInt(fields[0]);
-            Date birthDate = dateFormat.parse(fields[1]);
-            String firstName = fields[2];
-            String lastName = fields[3];
-            char gender = fields[4].charAt(0);
-            Date hireDate = dateFormat.parse(fields[5]);
-
-            emp = new Employee(empNo, birthDate, firstName, lastName, gender, hireDate);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return emp;
-    }
-
-    public static ArrayList<Employee> readEmployees(String fileName) {
-        ArrayList<String> faultyLines = new ArrayList<>();
-        String[] lines = TextFileIO.readFile(fileName);
-        ArrayList<Employee> result = new ArrayList<>();
-        for (String line : lines) {
-            if (validateEmployeeLine(line)) {
-                // Make use of method createEmployee above and saves to emp.
-                Employee emp = createEmployee(line);
-                result.add(emp);
-            }
-            else {
-                logger.warn("Invalid input line: " + line);
-                faultyLines.add(line);
-            }
-        }
-        return result;
-    }
 }
 
 

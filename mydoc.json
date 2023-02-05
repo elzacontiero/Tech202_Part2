@@ -1,0 +1,25 @@
+{
+  "name": "Elza Contiero",
+  "dob": "01/01/1980",
+  "mobile": "078964545513",
+  "id": 987456512,
+  "address": {
+    "firstline": "10 Downing Street",
+    "city": "London",
+    "postcode": "SW1A 2AA"
+  },
+  "hobbies": [
+    "Violin", "Trekking"
+  ],
+   "profession": "Software Developer",
+   "education": {
+    "course":{
+      "name": "Jva Bootcamp",
+      "provider": "Sparta Global"
+    },
+    "course":{
+       "name": "How to dismantle an atomic bomb",
+       "provider":"U2"
+    }
+  }
+}

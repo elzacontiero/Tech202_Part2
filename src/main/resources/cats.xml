@@ -1,0 +1,17 @@
+<ArrayList>
+    <item>
+        <name>Archie</name>
+        <dob>2018-08-15</dob>
+        <priority>2</priority>
+    </item>
+    <item>
+        <name>Angel</name>
+        <dob>2015-03-05</dob>
+        <priority>0</priority>
+    </item>
+    <item>
+        <name>Fred</name>
+        <dob>2023-01-15</dob>
+        <priority>0</priority>
+    </item>
+</ArrayList>
