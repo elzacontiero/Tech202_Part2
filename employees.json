@@ -1,0 +1,74 @@
+[
+  {
+    "empNo": 37682,
+    "birthDate": -250128000000,
+    "firstName": "Sigeru",
+    "lastName": "Akiyama",
+    "gender": "F",
+    "hireDate": 653526000000
+  },
+  {
+    "empNo": 17570,
+    "birthDate": -332557200000,
+    "firstName": "Nobuyoshi",
+    "lastName": "Fairtlough",
+    "gender": "M",
+    "hireDate": 580518000000
+  },
+  {
+    "empNo": 21657,
+    "birthDate": -342748800000,
+    "firstName": "Aran",
+    "lastName": "Katiyar",
+    "gender": "F",
+    "hireDate": 674607600000
+  },
+  {
+    "empNo": 22288,
+    "birthDate": -240541200000,
+    "firstName": "Boriana",
+    "lastName": "Vuskovic",
+    "gender": "F",
+    "hireDate": 566956800000
+  },
+  {
+    "empNo": 57671,
+    "birthDate": -249350400000,
+    "firstName": "Marie",
+    "lastName": "Mahmud",
+    "gender": "F",
+    "hireDate": 681260400000
+  },
+  {
+    "empNo": 31827,
+    "birthDate": -245548800000,
+    "firstName": "Kristine",
+    "lastName": "Zeilberger",
+    "gender": "F",
+    "hireDate": 620262000000
+  },
+  {
+    "empNo": 58896,
+    "birthDate": -246672000000,
+    "firstName": "Sreenivas",
+    "lastName": "Grandbois",
+    "gender": "F",
+    "hireDate": 650588400000
+  },
+  {
+    "empNo": 53645,
+    "birthDate": -399085200000,
+    "firstName": "Uzi",
+    "lastName": "Zeilberger",
+    "gender": "M",
+    "hireDate": 586738800000
+  },
+  {
+    "empNo": 38882,
+    "birthDate": -250732800000,
+    "firstName": "Aemilian",
+    "lastName": "Gimarc",
+    "gender": "F",
+    "hireDate": 531792000000
+  }
+]

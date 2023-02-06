@@ -1,13 +1,19 @@
 package com.spartaglobal.homework_employee;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.spartaglobal.fileIO.TextFileIO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
+import java.util.List;
 import java.util.regex.Pattern;
 
 
@@ -18,6 +24,11 @@ public class EmployeeUtilities {
     private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
 
+    /**
+     * Creates an Employee object from a CSV string.
+     * @param line CSV containing the fields.
+     * @return Employee object
+     */
     public static Employee createEmployee(String line) {
 
         String[] fields = line.split(",");
@@ -37,6 +48,11 @@ public class EmployeeUtilities {
         return emp;
     }
 
+    /**
+     * Reads a file with one employee per line, CSV.
+     * @param fileName File name to read.
+     * @return ArrayList of Employee objects.
+     */
     public static ArrayList<Employee> readEmployees(String fileName) {
         ArrayList<String> faultyLines = new ArrayList<>();
         String[] lines = TextFileIO.readFile(fileName);
@@ -56,8 +72,9 @@ public class EmployeeUtilities {
     }
 
     /**
-     * The input is a String line, because we can't receive an Employee
-     * object as it would have been already parsed just fine.
+     * Validates that the CSV string conforms to expected formats.
+     * @param line CSV string
+     * @return true when all fields match the formats.
      */
     public static boolean validateEmployeeLine(String line) {
         String[] fields = line.split(",");
@@ -97,6 +114,50 @@ public class EmployeeUtilities {
         return true;
     }
 
+
+    // ----------------------HOMEWORK------------------------------------------
+
+    /** METHOD 1 (serialisation - object to file)
+     * The list of employees is saved to a file in json format.
+     * @param employees a List of employees
+     * @param fileName the file name to save.
+     */
+    public static void saveToJsonFile(List<Employee> employees, String fileName) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(new File(fileName), employees); // method writeValueAsString loads the object o and writes
+    }
+
+    /** METHOD 2 (deserialization - file to object)
+     * Reads the file and returns a List of employees objects.
+     * @param fileName
+     * @return
+     */
+    public static List<Employee> loadFromJsonFileToObject(String fileName) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(new File(fileName), List.class);
+    }
+
+    /** METHOD 3 (serialization - object to file)
+     * Saves the employees list into a xml file.
+     * @param employees
+     * @param fileName
+     * @throws IOException
+     */
+    public static void saveToXmlFile(List<Employee> employees, String fileName) throws IOException {
+        XmlMapper mapper = new XmlMapper();
+        mapper.writeValue(new File(fileName), employees);
+    }
+
+    /** METHOD 4 (deserialization - file to object)
+     * Reads XML file and saves it to a List of Employees.
+     * @param fileName
+     * @return
+     * @throws IOException
+     */
+    public static List<Employee> loadFromXmlFileToObject(String fileName) throws IOException {
+        XmlMapper mapper = new XmlMapper();
+        return mapper.readValue(new File(fileName), List.class);
+    }
 }
 
 

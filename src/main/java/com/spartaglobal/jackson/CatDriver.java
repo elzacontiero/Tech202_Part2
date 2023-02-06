@@ -36,6 +36,7 @@ public class CatDriver {
             System.out.println(result);
             System.out.println(result);
 
+            // writeValue Saves to file
             ObjectMapper mapper = new ObjectMapper();
             mapper.writeValue(new File("src/main/resources/cats.json"), cats);
             XmlMapper xmlmapper = new XmlMapper();
